@@ -1,0 +1,17 @@
+name: Pull-requests on main branch
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+jobs:
+  check-pull-requests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses:  actions/checkout@v2
+      - name: Notify Pull-Requests Creation
+        run: |
+          echo "A pull-requests has been created for main branch"
